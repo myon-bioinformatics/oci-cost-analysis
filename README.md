@@ -1,4 +1,3 @@
-# Oracle Cloud Infrastructure Cost Analysis
 
 ## Overview
 
