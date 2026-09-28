@@ -1,53 +1,21 @@
+# oci-cost-analysis
 
-## Overview
+> [!IMPORTANT]
+> **Archived / no longer actively maintained.**
+>
+> This repository is preserved as a historical one-off Python example for processing an exported Oracle Cloud Infrastructure (OCI) Cost Analysis CSV. No further feature or compatibility maintenance is planned.
 
-This script processes "cost data" from Oracle Cloud Infrastructure (OCI).
+## Historical purpose
 
-The data is sourced from OCI's Cost Management, specifically from the "Cost Analysis" -> "Cost Details" section. 
+The script reads an OCI Cost Management / Cost Analysis export and reports selected cost data.
 
-## Steps
+It is kept public for reference, but repository-wide search found no implementation dependency from the owner's current GitHub repositories. It is not maintained as a shared module. For new OCI cost-management work, use the current OCI documentation and export/API contract.
 
-1. **Download Data**:
-   - Log in to Oracle Cloud Infrastructure.
-   - Navigate to Cost Management -> Cost Analysis -> Cost Details.
-   - Click on "Download table as CSV" to obtain the cost data.
+## Preserved files
 
-2. **Data Processing**:
-   - The downloaded CSV data is processed to extract relevant columns: Date (UTC), Block Storage, Compute, Database, Load Balancer, MySQL, Object Storage, Telemetry, Virtual Cloud Network, and Total (all in USD).
-   - If the amounts in JPY are converted to USD using an exchange rate (example: 1 USD = 150 JPY).
+- `oci-cost-analysis.py` — historical processing example
+- `oci-cost-details.csv` — accompanying sample data
 
-3. **Script Execution**:
-   - The script iterates over the processed data and prints each date along with the total cost in USD.
-   - The output format is: `Date (UTC): <date>, Total (USD): <total>`.
+## Maintenance status
 
-## Example
-
-```python
-import pandas as pd
-
-def print_date_total_oci_from_csv(file_path):
-    # Load the CSV file into a DataFrame
-    dataframe = pd.read_csv(file_path)
-    
-    # Iterate over each row and print Date (UTC) and Total (USD)
-    for index, row in dataframe.iterrows():
-        print(f"Date (UTC): {row['Date (UTC)']}, Total (USD): {row['Total (USD)']}")
-
-# Example usage
-if __name__ == "__main__":  
-  csv_file_path = "oci-cost-details.csv"
-  print_date_total_oci_from_csv(csv_file_path)
-```
-
-## Output
-```mathmatica
-Date (UTC): May 16 2024, Total (USD): 1.3608014053333333
-Date (UTC): May 17 2024, Total (USD): 1.699895054
-Date (UTC): May 18 2024, Total (USD): 1.699895054
-Date (UTC): May 19 2024, Total (USD): 1.699895054
-Date (UTC): May 20 2024, Total (USD): 0.20968403153333334
-Date (UTC): May 21 2024, Total (USD): 0.060215053760000005
-Date (UTC): May 22 2024, Total (USD): 0.060215053760000005
-Date (UTC): May 23 2024, Total (USD): 0.055197126613333335
-Date (UTC): May 24 2024, Total (USD): 6.785582786666667
-```
+This repository is intended to become read-only after GitHub archival. Existing source, sample data, and history are retained for reference.
