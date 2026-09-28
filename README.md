@@ -14,7 +14,7 @@ It is kept public for reference, but repository-wide search found no implementat
 ## Preserved files
 
 - `oci-cost-analysis.py` — historical processing example
-- `oci-cost-details.csv` — accompanying sample data
+- `oci-cost-details.csv` — **synthetic sample data** (fake values; same columns as an OCI Cost Analysis export). It does not contain real billing data.
 
 ## Maintenance status
 
